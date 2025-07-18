@@ -1,0 +1,112 @@
+/* Tipografía y fondo */
+body {
+    margin: 0;
+    font-family: 'Orbitron', sans-serif;
+    background: linear-gradient(135deg, #0f0f0f, #1a1a1a);
+    color: #00ffff;
+}
+
+/* Encabezado y navegación */
+header {
+    background: #111;
+    border-bottom: 3px solid #ff00ff;
+    text-align: center;
+    padding: 20px 0;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    box-shadow: 0 0 10px #ff00ff;
+}
+
+header h1 {
+    margin: 0;
+    color: #ff00ff;
+    text-shadow: 0 0 8px #ff00ff;
+}
+
+nav {
+    margin-top: 10px;
+}
+
+nav a {
+    margin: 0 15px;
+    color: #00ffff;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 8px 16px;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+nav a:hover {
+    color: #ff00ff;
+    border: 2px solid #ff00ff;
+    background-color: #111;
+    box-shadow: 0 0 10px #ff00ff;
+}
+
+/* Secciones */
+.seccion {
+    padding: 60px 20px;
+    max-width: 1000px;
+    margin: auto;
+    border-bottom: 1px solid #333;
+    position: relative;
+}
+
+h2 {
+    text-align: center;
+    color: #ff00ff;
+    text-shadow: 0 0 6px #ff00ff;
+}
+
+p {
+    font-size: 18px;
+    line-height: 1.6;
+    text-align: center;
+}
+
+/* Imagen */
+img {
+    display: block;
+    margin: 20px auto;
+    border: 4px solid #00ffff;
+    border-radius: 12px;
+    box-shadow: 0 0 20px #00ffff;
+    transition: transform 0.3s;
+}
+img:hover {
+    transform: scale(1.05);
+}
+
+/* Enlaces */
+a {
+    color: #00ffff;
+    text-decoration: none;
+}
+a:hover {
+    color: #ff00ff;
+}
+
+/* Footer */
+footer {
+    background: #0a0a0a;
+    padding: 20px;
+    text-align: center;
+    color: #888;
+    border-top: 3px solid #00ffff;
+    box-shadow: 0 -2px 10px #00ffff;
+}
+
+/* Figuras decorativas cyberpunk */
+.seccion::before {
+    content: "";
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    border: 2px solid #ff00ff;
+    top: 20px;
+    left: 20px;
+    transform: rotate(45deg);
+    box-shadow: 0 0 10px #ff00ff;
+}
