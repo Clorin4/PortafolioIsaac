@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cyberpunk Fetch</title>
+<style>
+    body {
+        background-color: #0a0a0a;
+        color: #00fff7;
+        font-family: 'Courier New', monospace;
+        text-align: center;
+        padding: 20px;
+    }
+    button {
+        background-color: #ff00ff;
+        border: none;
+        padding: 10px 20px;
+        font-size: 18px;
+        color: #fff;
+        cursor: pointer;
+        border-radius: 5px;
+        box-shadow: 0 0 10px #ff00ff;
+        transition: 0.3s;
+    }
+    button:hover {
+        background-color: #00fff7;
+        box-shadow: 0 0 20px #00fff7;
+        color: #000;
+    }
+    #resultado {
+        margin-top: 20px;
+        padding: 20px;
+        border: 2px solid #00fff7;
+        border-radius: 10px;
+        box-shadow: 0 0 15px #00fff7;
+        font-size: 18px;
+    }
+    .error {
+        color: #ff003c;
+        font-size: 20px;
+        font-weight: bold;
+        text-shadow: 0 0 5px #ff003c, 0 0 15px #ff003c;
+        animation: parpadeo 0.8s infinite alternate;
+        border: 2px solid #ff003c;
+        padding: 10px;
+        border-radius: 8px;
+        display: inline-block;
+        margin-top: 15px;
+        box-shadow: 0 0 15px #ff003c;
+    }
+    @keyframes parpadeo {
+        from { opacity: 1; }
+        to { opacity: 0.4; }
+    }
+</style>
+</head>
+<body>
+
+<h1>📡 Cargar de datos Isaac 📡</h1>
+<button onclick="cargarDatos()">Cargar Datos</button>
+
+<div id="resultado">Esperando datos...</div>
+
+<script>
+function cargarDatos() {
+    fetch('datos.json')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error("No se pudo cargar el archivo.");
+            }
+            return response.json();
+        })
+        .then(data => {
+            document.getElementById('resultado').innerHTML = `
+                <strong>Nombre:</strong> ${data.nombre} <br>
+                <strong>Correo:</strong> ${data.correo}
+            `;
+        })
+        .catch(error => {
+            document.getElementById('resultado').innerHTML = `
+                <div class="error">⚠ ERROR: No se pudo cargar la información ⚠</div>
+            `;
+        });
+}
+</script>
+
+</body>
+</html>

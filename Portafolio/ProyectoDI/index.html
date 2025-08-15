@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Formulario Isaac</title>
+  <link rel="stylesheet" href="estilo.css" />
+</head>
+<body>
+
+  <div id="welcome"></div>
+
+  <form id="formulario" novalidate>
+    <h2>Registro para NightCity</h2>
+
+    <label>Nombre completo
+      <input type="text" id="nombre" required />
+      <span class="error" id="error-nombre">Mínimo 3 letras</span>
+    </label>
+
+    <label>Correo electrónico
+      <input type="email" id="correo" required />
+      <span class="error" id="error-correo">Correo inválido</span>
+    </label>
+
+    <label>Edad
+      <input type="number" id="edad" required />
+      <span class="error" id="error-edad">Ingresa edad entre 18 y 99 años</span>
+    </label>
+
+    <label>Contraseña
+      <input type="password" id="contrasena" required />
+      <span class="error" id="error-contrasena">Mínimo 6 caracteres</span>
+    </label>
+
+    <button type="submit">Registrarse</button>
+    <div id="mensaje-exito" class="success-message" style="display: none;">
+      ¡Registro exitoso!
+    </div>
+  </form>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Cyberpunk</title>
+    <style>
+        body {
+            background-color: #0a0a0a;
+            color: #00fff7;
+            font-family: 'Courier New', monospace;
+            text-align: center;
+            padding: 40px;
+        }
+
+        h1 {
+            color: #ff00d4;
+            text-shadow: 0 0 10px #ff00d4, 0 0 20px #ff00d4;
+        }
+
+        .resultado {
+            border: 2px solid #00fff7;
+            padding: 15px;
+            margin: 10px auto;
+            width: 250px;
+            background-color: rgba(0, 255, 247, 0.1);
+            box-shadow: 0 0 15px #00fff7;
+            transition: transform 0.2s;
+        }
+
+        .resultado:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 25px #ff00d4;
+        }
+    </style>
+</head>
+<body>
+    <h1>Calculadora del Isaac</h1>
+    <div id="sumar" class="resultado"></div>
+    <div id="multiplicar" class="resultado"></div>
+    <div id="dividir" class="resultado"></div>
+
+    <script type="module">
+        import { sumar, multiplicar, dividir } from './calculadora.js';
+
+        // Valores de ejemplo
+        let a = 2077, b = 0;
+
+        // Ejecutar funciones
+        let resSuma = sumar(a, b);
+        let resMultiplicar = multiplicar(a, b);
+        let resDividir = dividir(a, b);
+
+        // Mostrar en consola
+        console.log(`Suma: ${resSuma}`);
+        console.log(`Multiplicación: ${resMultiplicar}`);
+        console.log(`División: ${resDividir}`);
+
+        // Mostrar en el DOM
+        document.getElementById('sumar').innerText = `Suma (${a} + ${b}) = ${resSuma}`;
+        document.getElementById('multiplicar').innerText = `Multiplicación (${a} × ${b}) = ${resMultiplicar}`;
+        document.getElementById('dividir').innerText = `División (${a} ÷ ${b}) = ${resDividir}`;
+    </script>
+</body>
+</html>
